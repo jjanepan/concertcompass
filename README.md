@@ -1,70 +1,66 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 411-FinalProject -- Concert Compass 
+How to set up the environment and launch Concert Compass: 
 
-## Available Scripts
+## Prerequisites
+Before you begin, ensure you have the following installed:
+- **Node.js and npm**: Download and install from [Node.js official website](https://nodejs.org/).
+- **Python 3 and pip**: Download and install from [Python's official website](https://python.org/).
+- **MongoDB**: Download and install using the command:
+  - npm install mongodb express cors
+ 
+## Clone the repository
+In bash, enter the following commands:
+- git clone https://github.com/yourusername/411-FinalProject.git
+- cd 411-FinalProject
 
-In the project directory, you can run:
+This will clone the repo and navigate to the main directory of the project.
 
-### `npm start`
+## Set up the frontend
+Navigate to the frontend directory:
+- cd concert-finder
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Install npm and run the front end of the application. 
+- npm install
+- npm start
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This will serve the frontend at [http://localhost:3000](http://localhost:3000).
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Set up the backend
+In a new terminal window, do the following steps and corresponding commands:
 
-### `npm run build`
+**Navigate to the backend:**
+- cd ../backend
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Install all required packages:**
+- pip install -r requirements.txt
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Create .env file with CLIENT_ID and CLIENT_SECRET:**
+- create .env file with
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  - CLIENT_ID="your key"
 
-### `npm run eject`
+  - CLIENT_SECRET="your key"
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Run the backend server:**
+- python -m flask --app spotify.py run
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This will serve the backend at [http://127.0.0.1:5000](http://127.0.0.1:5000).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Start the database 
+In the 'server' directory:
+- Create a config.env file
+- Enter the following into the config.env file
+  - ATLAS_URI=mongodb+srv://(username):(password)@(cluster)(projectId).mongodb.net/employees?retryWrites=true&w=majority
+  - PORT=5050
+Enter the following command in your terminal: 
+- node --env-file=config.env server
 
-## Learn More
+## Running the Application
+With both servers running, you can access the full functionality of Concert Compass through your browser:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Frontend**: [http://localhost:3000](http://localhost:3000)
+- **Backend**: [http://127.0.0.1:5000](http://127.0.0.1:5000)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
